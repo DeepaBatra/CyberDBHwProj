@@ -13,7 +13,7 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
 
 
 ## Contents
-   # - **Diagram** [Refer diagram](../blob/main/Diagrams/ELKProject.png)
+   # - **Diagram** [Refer diagram](../main/Diagrams/ELKProject.png)
    DVWA(Damn Vulnerable Web Application) is hosted and accessed through a LoadBalancer, Loadbalancer is distributing load between 2 virtual machines.
    ELk virtual machine is not directly accessed.
    # - **Steps to set up Elk** [Refer complete setup guide](../blob/main/Resources/Elk%20Commands.pdf)
