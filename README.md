@@ -26,6 +26,9 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
             10.4.0.4 ansible_python_interpreter=/usr/bin/python3
             [elk]
             10.4.0.4 ansible_python_interpreter=/usr/bin/python3
+    - Run install-elk.yml file, to configure the ELK to collect logs -  
+      cd /etc/ansible
+      ansible-playbook install-elk.yml
  
   - Add [filebeat-config.yml](../blob/main/ConfigFiles/config/filebeat-config.yml)and [metricbeat-config.yml](../https://github.com/DeepaBatra/CyberDBHwProj/blob/main/ConfigFiles/config/metricbeat-config.yml) files to 
     etc/ansible/files
@@ -33,12 +36,24 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
     etc/ansible/roles
     # - Access Policies 
         The main purpose of this is to monitor DVWA site and to restrict the network attacks. Jumpbox is used to access Virtual Netowrk via ssh.
-        Integrating with ELK server allows continuos monitoring of the Virtual Machines traffic. Configurations of each virtual machine -
+        Integrating with ELK server allows continuos monitoring of the Virtual Machines traffic. 
+        Configurations of each virtual machine -
         
-        | Type            | Name                     | IP                   | Publicly Accessible |
-        | --------------- | ------------------------ | -------------------- | ------------------- |
-        | Virtual Machine | vm-webserver1-useast-011 | 10.2.0.6(Private IP) | No                  |
+        | Type            | Name                     | IP                       | Publicly Accessible |
+        | --------------- | ------------------------ | ------------------------ | ------------------- |
+        | Virtual Machine | vm-webserver1-useast-011 | 10.2.0.6(Private IP)     | No                  |
+        | Virtual Machine | vm-webserver2-useast-011 | 10.2.0.5(Private IP)     | No                  |
+        | Virtual Machine | vm-jumpbox-useast-011    | 13.68.148.102(Public IP) | Yes                 |
+        | Virtual Machine | vm-elkhost-011           | 10.4.0.4(Private IP)     | No                  |
 
+  vm-elkhost-011 is configured to monitor vm-webserver1-useast-011 and vm-webserver2-useast-011.
+  Elk host has Filebeat and Metricbeat running, filebeat collects log data and shows them in the monitoring clusters and metricbeat collects metrics and statistics and shows them in the output specified, for example Elasticsearch or Logstash. 
+  Link to check logs once successfully configured - http://<IP>:5601/app/kibana
+  Check the detailed logs, 
+   [FilebeatLogs](../blob/main/LogFiles/FilebeatLogs.pdf)
+   [MetricbeatLogs](../blob/main/LogFiles/MetricbeatLogs.pdf)
+   
+   Also can customize logs by providing different time ranges and other options.
   
-    
+   Additional  [resources](../main/Resources) are added incase of any issues.
 
