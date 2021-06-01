@@ -48,7 +48,7 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
 
   vm-elkhost-011 is configured to monitor vm-webserver1-useast-011 and vm-webserver2-useast-011.
   Elk host has Filebeat and Metricbeat running, filebeat collects log data and shows them in the monitoring clusters and metricbeat collects metrics and statistics and shows them in the output specified, for example Elasticsearch or Logstash. 
-  Link to check logs once successfully configured - http://<IP>:5601/app/kibana
+  Link to check logs once successfully configured - http://..<IP>:5601/app/kibana
   Check the detailed logs, 
    [FilebeatLogs](../main/LogFiles/FilebeatLogs.pdf)
    [MetricbeatLogs](../main/LogFiles/MetricbeatLogs.pdf)
