@@ -16,9 +16,9 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
    # - **Diagram** [Refer diagram](../main/Diagrams/ELKProject.png)
    DVWA(Damn Vulnerable Web Application) is hosted and accessed through a LoadBalancer, Loadbalancer is distributing load between 2 virtual machines.
    ELk virtual machine is not directly accessed.
-   # - **Steps to set up Elk** [Refer complete setup guide](../blob/main/Resources/Elk%20Commands.pdf)
+   # - **Steps to set up Elk** [Refer complete setup guide](../main/Resources/Elk%20Commands.pdf)
    Follow the document and make below changes - 
-    - Add [install-elk.yml](../blob/main/ConfigFiles/config/install-elk.yml) to 
+    - Add [install-elk.yml](../main/ConfigFiles/config/install-elk.yml) to 
     etc/ansible
    - Update ansible.cfg remote user, remote_user = sysadmin
    - Updates hosts file - 
@@ -30,9 +30,9 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
       cd /etc/ansible
       ansible-playbook install-elk.yml
  
-  - Add [filebeat-config.yml](../blob/main/ConfigFiles/config/filebeat-config.yml)and [metricbeat-config.yml](../https://github.com/DeepaBatra/CyberDBHwProj/blob/main/ConfigFiles/config/metricbeat-config.yml) files to 
+  - Add [filebeat-config.yml](../main/ConfigFiles/config/filebeat-config.yml)and [metricbeat-config.yml](../main/ConfigFiles/config/metricbeat-config.yml) files to 
     etc/ansible/files
-  - Add [filebeat-playbook.yml](../blob/main/ConfigFiles/Playbooks/filebeat-playbook.yml) and [metricbeat-playbook.yml](../blob/main/ConfigFiles/Playbooks/metricbeat-playbook.yml) files to 
+  - Add [filebeat-playbook.yml](../main/ConfigFiles/Playbooks/filebeat-playbook.yml) and [metricbeat-playbook.yml](../main/ConfigFiles/Playbooks/metricbeat-playbook.yml) files to 
     etc/ansible/roles
     # - Access Policies 
         The main purpose of this is to monitor DVWA site and to restrict the network attacks. Jumpbox is used to access Virtual Netowrk via ssh.
@@ -50,8 +50,8 @@ Run the latest version of the Elastic stack with Docker and Docker Compose.
   Elk host has Filebeat and Metricbeat running, filebeat collects log data and shows them in the monitoring clusters and metricbeat collects metrics and statistics and shows them in the output specified, for example Elasticsearch or Logstash. 
   Link to check logs once successfully configured - http://<IP>:5601/app/kibana
   Check the detailed logs, 
-   [FilebeatLogs](../blob/main/LogFiles/FilebeatLogs.pdf)
-   [MetricbeatLogs](../blob/main/LogFiles/MetricbeatLogs.pdf)
+   [FilebeatLogs](../main/LogFiles/FilebeatLogs.pdf)
+   [MetricbeatLogs](../main/LogFiles/MetricbeatLogs.pdf)
    
    Also can customize logs by providing different time ranges and other options.
   
